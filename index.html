@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container flex bg-black">
+        <div class="left p-1">
+            <div class="close">
+                <img width="30" class="invert" src="close.svg" alt="">
+            </div>
+            <div class="home bg-grey rounded m-1 p-1">
+                <div class="logo flex items-center"><img width="30px" class="invert" src="logo.svg" alt=""><b>Spotify</b></div>
+                <ul>
+                    <li><img class="invert" src="home.svg" alt="home">Home</li>
+                    <li class="search-menu-item">
+                        <div class="search-container">
+                            <img width="20px" class="invert" src="search.svg" alt="search">
+                            <input type="text" id="searchInput" placeholder="Search songs or artists...">
+                        </div>
+                        <div class="search-results"></div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="library rounded bg-grey m-1 p-1">
+                <div class="heading">
+                    <img class="invert" src="playlist.svg" alt="">
+                    <div class="h2">
+                        Your Library
+                    </div>
+                </div>
+                <div class="songlist">
+                    <ul>
+                    </ul>
+                </div>
+
+                <div class="footer">
+                    <div>
+                        <a href="https://www.spotify.com/in-en/legal/">
+                            <span>Legal</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.spotify.com/in-en/safetyandprivacy/">
+                            <span>Privacy Center</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.spotify.com/in-en/legal/privacy-policy/">
+                            <span>Privacy Policy</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.spotify.com/in-en/legal/cookies-policy/">
+                            <span>Cookies</span>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3">
+                            <span>About Ads</span>
+                        </a>
+                    </div>              
+                </div>
+            </div>   
+        </div>
+        <div class="right bg-grey rounded">
+            <div class="header">
+                <div class="nav">
+                    <div class="hamburgercont">
+                        <img class="invert hamburger" src="hamburger.svg" alt="">
+                        <i class="hgi hgi-stroke hgi-sharp hgi-arrow-left-01 f-12"></i>
+                        <i class="hgi hgi-stroke hgi-arrow-right-01 f-12"></i>
+                    </div>
+                </div>
+                <div class="button">
+                    <button class="signupbtn">Sign up</button>
+                    <button class="loginbtn">Log in</button>
+                </div>
+            </div>
+            <div class="spotifyPlaylist">
+                <h1>Spotify Playlists</h1>
+                <div class="cardContainer">
+                </div>
+                <div class="flex justify-center align-center">
+                    <div class="playbar">
+                        <div class="seekbar">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="abovebar">
+                            <div class="songinfo"></div>
+                            <div class="songbuttons">
+                                <i id="previous" class="hgi hgi-stroke hgi-previous"></i>
+                                <i id="play" class="hgi hgi-stroke hgi-play"></i>
+                                <i id="next" class="hgi hgi-stroke hgi-next"></i> 
+                            </div>
+                            <div class="timevol"> 
+                                <div class="songtime"></div>
+                                <div class="volume">
+                                    <i class="invert f-12 hgi hgi-stroke hgi-volume-high"></i>
+                                    <div class="range">
+                                        <input type="range" name="volume" id="volumeControl">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
