@@ -91,7 +91,8 @@ const playmusic = (index, pause = false) => {
     
     initAudio();
     currentsong.src = `${currfolder}/${track}`;
-    
+    let play = document.getElementById("play");
+
     if (!pause) {
         currentsong.play().catch(e => showError("Playback failed: " + e));
         play.classList?.remove("hgi-play");
@@ -108,7 +109,7 @@ async function getAllSongs() {
         div.innerHTML = htmlText;
         
         const folders = Array.from(div.getElementsByTagName("a"))
-            .filter(a => a.href.includes("/songs/"))
+            .filter(a => a.href.includes("songs/"))
             .map(a => a.href.split('/').filter(Boolean).pop());
         
         for (const folder of folders) {
@@ -202,7 +203,7 @@ async function displayalbums() {
         elements.cardContainer.innerHTML = '';
         
         const folders = Array.from(div.getElementsByTagName("a"))
-            .filter(a => a.href.includes("/songs/"))
+            .filter(a => a.href.includes("songs/"))
             .map(a => a.href.split('/').filter(Boolean).pop());
         
         for (const folder of folders) {
@@ -233,7 +234,7 @@ async function createAlbumCard(folder) {
             <div class="icon-container">
                 <i class="hgi hgi-stroke hgi-play"></i>
             </div>
-            <img src="/songs/${folder}/cover.jpg" alt="${formattedFolder}" onerror="this.src='https://via.placeholder.com/150'">
+            <img src="songs/${folder}/cover.jpg" alt="${formattedFolder}" onerror="this.src='https://via.placeholder.com/150'">
             <h2>${info.title || formattedFolder}</h2>
             <p>${info.description || `Songs by ${formattedFolder}`}</p>
         </div>`;
@@ -374,6 +375,6 @@ async function init() {
         showError("Initialization failed: " + error);
     }
 }
-
+    
 // Start the application
 document.addEventListener('DOMContentLoaded', init);
